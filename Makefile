@@ -9,4 +9,4 @@ $(PDFNAME).pdf: *.tex
 
 .PHONY: clean
 clean:
-	$(RM) *.aux *.log *.out $(PDFNAME).pdf
+	$(RM) *.aux *.log *.out *.fdb_latexmk *.fls *.synctex.gz $(PDFNAME).pdf
