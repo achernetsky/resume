@@ -10,6 +10,7 @@
 \address{8A, Vodolajskogo str. Apt 48}{Minsk, Belarus 220056}
 \mobile{+375~(29)~3683767}
 \email{alexander.chernetsky@gmail.com}
+\extrainfo{Birthday date: 10 Jun 1991}
 \photo[64pt]{picture}
 
 \begin{document}
@@ -25,17 +26,27 @@
 
 \section{Experience}
 
-\subsection{Wargaming (\url{http://wargaming.net}), Minsk}
-\cventry{Septermber 2015 - October 2018}{Full stack web developer of clan portal}{}{}{}{Support of legacy code of \href{http://wargaming.net/clans}{Clan portal}, bug-fixing and implementation of new features.}
-\cvline{tools}{\emph{Linux, Python (Django, Wagtail), RabbitMQ, Javascript (Backbone, Webpack, Jasmine, Sinon, Karmajs), PostgreSQL, git.}}
+\cventry{2016 - 2018}{Go developer}{}{}{}{Development a versatile agent which collect logs and forward them to cloud. Logs sources were:
+\begin{itemize}
+  \item rfc3164, rfc5424 by udp and tcp;
+  \item tail any file;
+  \item cron job output;
+\end{itemize}
+The following techniques and tricks were used: \href{https://github.com/omniti-labs/jlog}{JLog}, \href{https://en.wikipedia.org/wiki/Exponential_backoff}{exponential backoff}, \href{https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern}{circuit breaker design pattern} and gracefully shutdown.}
+\cvline{tools}{\emph{Linux, Go, git.}}
 
-\cventry{}{Full stack web developer of client in game browser solutions}{}{}{}{Development single page applications for World of Tanks and World of Warships client browser (cef). I have developed the following key parts of system:
+\subsection{Wargaming (\url{http://wargaming.net}), Minsk}
+\cventry{Septermber 2015 - October 2018}{Full stack web developer of client in game browser solutions}{}{}{}{Development single page applications for World of Tanks and World of Warships client browser (cef). I have developed the following key parts of system:
 \begin{itemize}
   \item authentication worker based on wargaming internal system;
   \item write SDD for team developers and lead some key features of projects;
   \item react components collection and helpers for cef applications in World of Tanks Client;
+  \item communicate effectively with a large numbers of departments, such as QA, Pre-production, Release managers, Localizers, Business analysts;
 \end{itemize}}
 \cvline{tools}{\emph{Linux, Python (Aiohttp, Django), RabbitMQ, Gunicorn, Javascript (Typescript, React, Webpack, Babel), PostgreSQL, git.}}
+
+\cventry{}{Full stack web developer of clan portal}{}{}{}{Support of legacy code of \href{http://wargaming.net/clans}{Clan portal}, bug-fixing and implementation of new features.}
+\cvline{tools}{\emph{Linux, Python (Django, Wagtail), RabbitMQ, Javascript (Backbone, Webpack, Jasmine, Sinon, Karmajs), PostgreSQL, git.}}
 
 \subsection{Gurtsoft (\url{http://gurtam.com}), Minsk}
 \cventry{August 2012 - August 2015}{Developer of Gurtam GIS services}{}{}{}{Support of legacy code of GIS service such as Gurtam Maps, geocoding and reverse geocoding, also bug-fixing and implementation of new features.}
@@ -80,16 +91,17 @@
 \cvlistitem{\url{http://linkedin.com/in/achernetsky}}
 
 \section{Languages}
+\cvline{\textbf{Spanish}}{Beginner}
 \cvline{\textbf{English}}{Intermediate}
 \cvline{\textbf{Russian}}{Native}
 
 \section{Tools used at work}
-\cvcomputer{\textbf{Languages}}{Objective C, C++, Python, JavaScript}{\textbf{Operating systems}}{Linux}
-\cvcomputer{\textbf{Databases}}{PostgreSQL, SQLite, MongoDB, Berkeley DB}{\textbf{Mobile development}}{iOS}
+\cvcomputer{\textbf{Languages}}{Objective C, C++, Python, \\ JavaScript}{\textbf{Operating systems}}{Linux}
+\cvcomputer{\textbf{Databases}}{PostgreSQL, SQLite, MongoDB, \\ Berkeley DB}{\textbf{Mobile development}}{iOS}
 \cvline{\textbf{Revision control}}{git, svn}
 
 \section{Tools used in personal/educational projects}
-\cvcomputer{\textbf{Languages}}{C, Java, Scala, Scheme,\\ Octave, assembly language,\\ Golang}{\textbf{Databases}}{MySQL, CouchDB}
+\cvcomputer{\textbf{Languages}}{C, Java, Scala, Scheme,\\ Octave, assembly language,\\ ClojureScript, Clojure}{\textbf{Databases}}{MySQL, CouchDB}
 
 \section{Interests}
 \cvlistdoubleitem{Functional programming}{Mobile development}
