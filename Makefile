@@ -1,11 +1,13 @@
-PDFNAME = resume
+PDFNAME = CV_Aliaksandr_Charnetski
+LATEXNAME = resume.tex
 PDFLATEX = pdflatex
 RM = rm -f
 
 all: $(PDFNAME).pdf
 
-$(PDFNAME).pdf: *.tex
-	$(PDFLATEX) $(PDFNAME)
+$(PDFNAME).pdf: $(LATEXNAME)
+	$(PDFLATEX) $(LATEXNAME)
+	mv $(basename $(LATEXNAME)).pdf $(PDFNAME).pdf
 
 .PHONY: clean
 clean:

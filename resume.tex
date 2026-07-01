@@ -1,18 +1,19 @@
+\PassOptionsToPackage{pdftex}{hyperref}
+
 \documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{casual}
 \moderncvcolor{grey}
 
 \usepackage[utf8]{inputenc}
-\usepackage[pdftex]{hyperref}
 \usepackage[scale=0.75]{geometry}
 \usepackage{color}
 
 \firstname{Aliaksandr}
 \familyname{Charnetski}
-\address{8A, Vodolajskogo str. Apt 48}{Minsk, Belarus 220056}
-\mobile{+375~(29)~3683767}
+\address{17, Smyczkowa str. Apt 9}{Warsaw, Poland 02-678}
+\mobile{+48~882~691~049}
 \email{alexander.chernetsky@gmail.com}
-\extrainfo{Birthday date: 10 Jun 1991}
+\extrainfo{Birthday date: 10 Jun 1991, Citizenship: Belarus, Work permit: Poland}
 
 \begin{document}
 
@@ -20,16 +21,32 @@
 
 \section{Summary}
 
-Team Lead / Senior Software Engineer with broad experience (8+ years) in software development.
+Software Engineer with broad experience (15+ years) in software development.
 
 Highly motivated and self-driven person with strong soft and problem solving skills.
 
-The most used technical skills include Python2/3 (Django, Asyncio, Aiohttp), JavaScript (React, Backbone, and other frameworks), Golang.
+The most used technical skills include Golang (Echo, gRPC, pgx), Python (Django, asyncio, aiohttp),
+JavaScript/TypeScript (React, Backbone, and other frameworks), PostgreSQL, Redis and AWS.
 
 \section{Experience}
 
+\subsection{Level (\url{https://level.co/}), Redwood City, California, remote}
+\cventry{December 2020 - June 2026}{Senior Software Engineer}{}{}{}{
+  For the company I did the following:
+\begin{itemize}
+  \item Designed and implemented a server and a protocol for video doorbells;
+  \item Rewrote a buggy device provisioner tool from Python to Golang. The new implementation
+  significantly reduced the number of bugs, made the code easier to maintain, and made it easier
+  to add new devices;
+  \item Successfully migrated data from MongoDB to PostgreSQL. It allowed easily maintain
+  data integrity and DB schema;
+  \item Built a priority-based messaging queue for IoT device commands, improving execution order,
+  reducing latency, and ensuring reliable delivery.
+\end{itemize}}
+\cvline{tools}{\emph{Golang, PostgreSQL, MongoDB, AWS, Ansible, Python, React, C, OpenTelemetry, gRPC.}}
+
 \subsection{Kyriba (\url{https://www.kyriba.by/}), Minsk}
-\cventry{February 2019 - Present}{Team Lead / Senior Software Engineer}{}{}{}{For the Format project, I have been taking the role of a team lead. I am responsible for:
+\cventry{February 2019 - December 2020}{Team Lead / Senior Software Engineer}{}{}{}{For the Format project, I have been taking the role of a team lead. I am responsible for:
 \begin{itemize}
   \item requirements analysis;
   \item writing SDD for team developers and lead some key features of projects;
@@ -39,21 +56,18 @@ The most used technical skills include Python2/3 (Django, Asyncio, Aiohttp), Jav
   \item supporting of legacy code;
   \item providing feedback, mentoring, team development, interviewing, onboarding and so on;
 \end{itemize}}
-\cvline{tools}{\emph{Windows 10, Python 2, Robot Framework, MongoDB, Jenkins.}}
+\cvline{tools}{\emph{Windows 10, Python, Robot Framework, MongoDB, Jenkins.}}
 
 \subsection{Wargaming (\url{http://wargaming.net}), Minsk}
 \cventry{Septermber 2015 - October 2018}{Full stack web developer of client in game browser solutions}{}{}{}{Development single-page applications for World of Tanks and World of Warships client browser (cef). I developed the following key parts of the services:
 \begin{itemize}
-  \item authentication worker based on wargaming internal system;
+  \item authentication worker based on Wargaming internal system;
   \item write SDD for team developers and lead some key features of projects;
   \item react components collection and helpers for cef applications in World of Tanks Client;
 \end{itemize}
 I communicated effectively with a large number of departments, such as QA, Pre-production, Release managers, Localizers, Business analysts.
 I also had the mentoring experience.}
-\cvline{tools}{\emph{Linux, Python 2/3 (Aiohttp, Django), RabbitMQ, Redis, React, PostgreSQL, TeamCity}}
-
-\cventry{}{Full stack web developer of clan portal}{}{}{}{Support of legacy code of \href{http://wargaming.net/clans}{Clan portal}, bug-fixing and implementation of new features.}
-\cvline{tools}{\emph{Linux, Python (Django, Wagtail), RabbitMQ, Backbone, PostgreSQL, TeamCity}}
+\cvline{tools}{\emph{Linux, Python 2/3 (Aiohttp, Django), RabbitMQ, Redis, React, PostgreSQL}}
 
 \subsection{Gurtsoft (\url{http://gurtam.com}), Minsk}
 \cventry{August 2012 - August 2015}{Developer of Gurtam GIS services}{}{}{}{Support of legacy code of GIS service such as Gurtam Maps, geocoding and reverse geocoding, also bug-fixing and implementation of new features.}
@@ -67,39 +81,24 @@ I also had the mentoring experience.}
 \end{itemize}}
 \cvline{tools}{\emph{Linux, C++, Boost, OMP, gcc, GNU make, Berkeley DB.}}
 
-\cventry{}{Key developer of \href{http://apps.wialon.com/}{Wialon apps}}{}{}{}{I implemented a few applications. Among them are Driving Logbook, Dashboard, Gurtam Maps, and iDriveSafe IQ. They are implemented using Wialon Hosting and Wialon Kit SDKs.}
-\cvline{tools}{\emph{JavaScript (Backbone).}}
-
-\cventry{}{Developer of hosting.wialon.com}{}{}{}{Web-based GPS tracking software platform. Implementation of new features, bug-fixing, support of legacy code.}
-\cvline{tools}{\emph{Linux, JavaScript (Qooxdoo), Tcl}}
-
-\cventry{}{Key developer of \href{https://github.com/wialon/python-wialon}{python-wialon}}{}{}{}{Wialon Remote API wrapper for Python.}
-\cvline{tools}{\emph{Python 2.}}
-
 \section{Education}
 \cventry{2009-2014}{Mathematician–software engineer degree}{BSUIR}{Minsk}{}{Graduated from \emph{Belarusian State University of Informatics and Radioelectronics} in \emph{2014}. Received \emph{mathematician--software engineer} degree.}
 
 \section{Diploma project}
 \cvline{title}{\emph{Service to provide distributed locks and storage of configurations}}
-\cvline{description}{Development of a service for obtaining distributed locks using \emph{RAFT} consensus algorithm was the goal of the diploma project. The work was based on the article ``In Search of an Understandable Consensus Algorithm'' by Diego Ongaro and John Ousterhout presented at Stanford University. Project received a high grade and I was offered to continue education to receive second stage of higher education, as well as teach students at the ``Computer science'' department.}
-
-\section{Personal projects}
-\cventry{2016 - 2019}{Go developer}{}{}{}{Development a versatile agent that collects logs and forwards them to a cloud. Logs sources are collected from TCP and UDP connections, from file and cron job output. The following techniques and tricks were used: \href{https://github.com/omniti-labs/jlog}{JLog}, \href{https://en.wikipedia.org/wiki/Exponential_backoff}{exponential backoff}, \href{https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern}{circuit breaker design pattern} and gracefully shutdown.}
-\cvline{tools}{\emph{Linux, Go.}}
-
-\cventry{2018 - 2019}{ClojureScript developer}{}{}{}{Development a web-based data visualization dashboard}
-\cvline{tools}{\emph{Linux, ClojureScript, Leiningen.}}
+\cvline{description}{Development of a service for obtaining distributed locks using \emph{RAFT} consensus algorithm was the goal of the diploma project.
+The work was based on the article ``In Search of an Understandable Consensus Algorithm'' by Diego Ongaro and John Ousterhout presented at Stanford University.
+Project received a high grade and I was offered to continue education to receive second stage of higher education, as well as teach students at the ``Computer science'' department.}
 
 \section{On the Web}
 \cvlistitem{\url{http://github.com/achernetsky}}
 \cvlistitem{\url{http://linkedin.com/in/achernetsky}}
 
 \section{Languages}
-\cvitemwithcomment{Spanish}{Beginner (A1)}{}
-\cvitemwithcomment{English}{Intermediate (B1)}{}
+\cvitemwithcomment{English}{Upper-Intermediate (B2)}{}
 \cvitemwithcomment{Russian}{Native}{}
 
 \section{Tools used in personal/educational projects}
-\cvcomputer{\textbf{Languages}}{C, Java, Scala, Scheme,\\ Octave, assembly language,\\ ClojureScript, Clojure, Go}{\textbf{Databases}}{MySQL, CouchDB}
+\cvcomputer{\textbf{Languages}}{Java, Scala, Scheme,\\ Octave, assembly language,\\ ClojureScript, Clojure}{\textbf{Databases}}{MySQL, CouchDB}
 
 \end{document}
