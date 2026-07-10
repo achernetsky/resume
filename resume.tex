@@ -1,4 +1,9 @@
 \PassOptionsToPackage{pdftex}{hyperref}
+% moderncv loads hyperref, which tries to turn the \url{} in the Level
+% \subsection title into a PDF bookmark and corrupts the .out file (the 2nd
+% pdflatex pass then dies with "File ended while scanning use of \@@BOOKMARK").
+% A CV needs no bookmark outline, so disable it before the class loads hyperref.
+\PassOptionsToPackage{bookmarks=false}{hyperref}
 
 \documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{casual}
@@ -7,6 +12,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[scale=0.75]{geometry}
 \usepackage{color}
+
+% Extended-CV toggle. Build the extended variant with:
+%   pdflatex "\def\EXTENDED{}\input{resume.tex}"
+% (the Makefile's `extended` target does this for you).
+\newif\ifextended
+\ifdefined\EXTENDED\extendedtrue\fi
 
 \firstname{Aliaksandr}
 \familyname{Charnetski}
@@ -24,7 +35,11 @@
 Backend-focused Software Engineer with 15+ years of experience building distributed systems,
 IoT platforms, and high-load web services.
 
+\medskip
+
 Strong track record of designing protocols, migrating legacy systems, and leading development teams.
+
+\medskip
 
 The most used technical skills include Golang (Echo, gRPC, pgx), Python (Django, asyncio, aiohttp),
 JavaScript/TypeScript (React, Backbone, and other frameworks), PostgreSQL, Kafka, Redis and AWS.
@@ -42,8 +57,24 @@ JavaScript/TypeScript (React, Backbone, and other frameworks), PostgreSQL, Kafka
   simplifying schema management;
   \item Built a priority-based messaging queue for IoT device commands, improving execution order,
   reducing latency, and ensuring reliable delivery.
-\end{itemize}}
-\cvline{tools}{\emph{Golang, PostgreSQL, Kafka, MongoDB, AWS, Ansible, Python, React, C, OpenTelemetry, gRPC.}}
+\end{itemize}
+\ifextended
+\medskip
+Key technologies and how they were used:
+\begin{itemize}
+  \item \textbf{PostgreSQL} – primary datastore accessed via \emph{pgx}; led the MongoDB-to-PostgreSQL
+  migration and optimized hot endpoints with batched queries and CTEs to reduce database load;
+  \item \textbf{Kafka} – event backbone for the push-notification pipeline, the audit trail, and
+  cross-service notifications (voice assistant and video);
+  \item \textbf{Redis} – device-reachability store backed by Lua scripts, push-notification and rate
+  limiting;
+  \item \textbf{AWS} – S3 for firmware artifacts and data files; SQS consumers for battery-level,
+  package-detection and video-stream events; Kinesis for video-doorbell signaling;
+  \item \textbf{Observability} – distributed tracing and metrics via OpenTelemetry, with services
+  built on Echo (HTTP) and gRPC.
+\end{itemize}
+\fi}
+\cvline{tools}{\emph{Golang, PostgreSQL, Kafka, Redis, MongoDB, AWS, Ansible, Python, React, C, OpenTelemetry, gRPC.}}
 
 \subsection{Kyriba (\url{https://www.kyriba.by/}), Minsk}
 \cventry{Feb 2019 – Dec 2020}{Team Lead / Senior Software Engineer}{}{}{}{As team lead for the Format project: wrote SDDs and led key features,
@@ -87,7 +118,6 @@ Project received a high grade and I was offered to continue education to receive
 \cvlistitem{\url{https://linkedin.com/in/achernetsky}}
 
 \section{Languages}
-\cvitemwithcomment{English}{Upper-Intermediate (B2)}{}
-\cvitemwithcomment{Russian}{Native}{}
+\cvdoubleitem{English}{Upper-Intermediate (B2)}{Russian}{Native}
 
 \end{document}
